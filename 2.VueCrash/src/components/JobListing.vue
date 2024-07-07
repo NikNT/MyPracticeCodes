@@ -27,12 +27,12 @@
           <i class="pi pi-map-marker text-orange-700"></i>
           {{ job.location }}
         </div>
-        <a
-          :href="'/job' + job.id"
+        <RouterLink
+          :to="'/jobs/' + job.id"
           class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
         >
           Read More
-        </a>
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -40,6 +40,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { RouterLink } from "vue-router";
 const prop = defineProps({
   job: {
     type: Object,
