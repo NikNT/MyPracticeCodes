@@ -1,4 +1,0 @@
-This is a test file named as test.txt
-created on July 22 23:47
-If you are able to read this file,
-the test is OK!
