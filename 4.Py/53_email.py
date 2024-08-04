@@ -19,8 +19,12 @@ Subject: {subject}\n
 server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
 
-server.login(sender, password)
-print('Logged In!')
+try:
+    server.login(sender, password)
+    print('Logged In!')
 
-server.sendmail(sender, receiver, message)
-print("Email has been sent!")
+    server.sendmail(sender, receiver, message)
+    print("Email has been sent!")
+except smtplib.SMTPAuthenticationError:
+    print("Unable to Sign In")
+    
